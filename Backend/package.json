@@ -1,0 +1,19 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "this is backend to handle APIs for TaskList project",
+  "main": "index.js",
+  "scripts": {
+    "test": "justTest"
+  },
+  "author": "chirayu humar",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "date-fns": "^2.30.0",
+    "express": "^4.18.2",
+    "sqlite": "^4.2.1",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0"
+  }
+}
