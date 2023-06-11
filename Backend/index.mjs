@@ -7,7 +7,7 @@ import {v4 as generatePassword} from 'uuid';
 import cors from "cors";
 
 const corsOptions = {
-  origin: "http://localhost:3004",
+  origin: "http://localhost:3000",
 };
 
 //setting path to database
