@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const response = await fetch("http://localhost:8082/printTable", {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/printTable`, {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
