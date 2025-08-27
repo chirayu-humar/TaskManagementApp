@@ -6,8 +6,12 @@ import { format } from 'date-fns';
 import {v4 as generatePassword} from 'uuid';
 import cors from "cors";
 
+import dotenv from 'dotenv'
+dotenv.config()
+console.log(process.env.CLIENT_PORT)
+
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: `http://localhost:${process.env.CLIENT_PORT}`
 };
 
 //setting path to database
@@ -24,8 +28,8 @@ async function databaseSetup () {
             filename: dbPath,
             driver: sqlite3.Database
         });
-        app.listen(8082, () => {
-            console.log("server listening on port 8082")
+        app.listen(process.env.SERVER_PORT, () => {
+            console.log(`server listening on port ${process.env.SERVER_PORT}`)
         });
         console.log("database connected successfully");
     } catch (e) {
