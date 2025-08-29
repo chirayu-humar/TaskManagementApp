@@ -9,9 +9,12 @@ import cors from "cors";
 import dotenv from 'dotenv'
 dotenv.config()
 console.log(process.env.CLIENT_PORT)
+const allowedOrigin = process.env.FRONTEND_URL || '*';
 
 const corsOptions = {
-  origin: `http://localhost:${process.env.CLIENT_PORT}`
+  origin: allowedOrigin,
+    credentials: true,
+    optionsSuccessStatus: 200
 };
 
 //setting path to database
