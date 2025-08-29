@@ -31,7 +31,7 @@ async function databaseSetup () {
             filename: dbPath,
             driver: sqlite3.Database
         });
-        app.listen(process.env.SERVER_PORT, () => {
+        app.listen(process.env.SERVER_PORT, '0.0.0.0',() => {
             console.log(`server listening on port ${process.env.SERVER_PORT}`)
         });
         console.log("database connected successfully");
@@ -62,7 +62,7 @@ const convertSnakeCaseToCamalCase = (array) => {
 
 app.get('/createTable', async (req, res) => {
     const createTableQuery = `
-    CREATE TABLE Task (
+    CREATE TABLE IF NOT EXISTS Task (
         id varchar(50),
         task_detail text,
         last_date date
