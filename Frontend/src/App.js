@@ -36,7 +36,6 @@ class App extends Component {
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json',
-        'Origin': 'http://localhost:3000',
         'Access-Control-Request-Method': 'GET',
       },
       redirect: "follow", // manual, *follow, error
@@ -66,14 +65,13 @@ class App extends Component {
       lastDate: dateInput
     }
 
-    const response = await fetch("http://localhost:8082/insertData", {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/insertData`, {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json',
-        'Origin': 'http://localhost:3000',
         'Access-Control-Request-Method': 'GET',
       },
       redirect: "follow", // manual, *follow, error
@@ -103,14 +101,13 @@ class App extends Component {
       taskDetail: taskInput,
       lastDate: dateInput
     }
-    const response = await fetch(`http://localhost:8082/change/task/${idOfUpdatingElement}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/change/task/${idOfUpdatingElement}`, {
       method: "PUT", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
-        'Content-Type': 'application/json',
-        'Origin': 'http://localhost:3000',
+        'Content-Type': 'application/json', 
         'Access-Control-Request-Method': 'GET',
       },
       redirect: "follow", // manual, *follow, error
@@ -145,14 +142,13 @@ class App extends Component {
   }
 
   deleteAnElement = async (id) => {
-    const response = await fetch(`http://localhost:8082/delete/task/${id}`, {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/delete/task/${id}`, {
       method: "DELETE", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
         'Content-Type': 'application/json',
-        'Origin': 'http://localhost:3000',
         'Access-Control-Request-Method': 'GET',
       },
       redirect: "follow", // manual, *follow, error
